@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 3
+  tags:
+  - ShootingPoint
+  - Arrow
+  - ArrowIteam
+  - Walls
+  - Coin
+  - Enemy
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: 'Background '
+    uniqueID: 812292729
+    locked: 0
+  - name: Ground
+    uniqueID: 265364107
+    locked: 0
+  - name: 'Characters '
+    uniqueID: 2177800969
+    locked: 0
+  - name: AboveCharacters
+    uniqueID: 2723847265
+    locked: 0
+  - name: Projectile
+    uniqueID: 3157097705
+    locked: 0
+  m_RenderingLayers:
+  - Default

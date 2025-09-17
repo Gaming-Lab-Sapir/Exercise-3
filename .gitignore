@@ -1,0 +1,70 @@
+# --- Unity caches & temp ---
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild*/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+[Mm]emoryCaptures/
+[Rr]ecordings/
+[Pp]ackageCache/
+
+# --- Addressables ---
+/ServerData
+/[Aa]ssets/StreamingAssets/aa*
+/[Aa]ssets/AddressableAssetsData/link.xml*
+/[Aa]ssets/Addressables_Temp*
+/[Aa]ssets/AddressableAssetsData/*/*.bin*
+
+# --- Visual Scripting generated ---
+/[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db
+/[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db.meta
+/[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Core/Property Providers
+/[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Core/Property Providers.meta
+
+# --- IDEs / editors ---
+.vs/
+.vscode/
+.idea/
+[Aa]ssets/Plugins/Editor/JetBrains*
+*.DotSettings.user
+.vsconfig
+
+# --- Gradle ---
+.gradle/
+
+# --- Unity/Mono/VS generated files ---
+ExportedObj/
+.consulo/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+
+# --- Logs & crash info ---
+*.log
+sysinfo.txt
+mono_crash.*
+
+# --- Builds / packages ---
+*.apk
+*.aab
+*.unitypackage
+*.unitypackage.meta
+*.app
+
+# --- TestRunner temp scenes ---
+InitTestScene*.unity*
