@@ -16,6 +16,9 @@ public class PlayerShoot : MonoBehaviour
         playerAnimator = GetComponent<Animator>();
         playerInputActions = new PlayerInputActions();
         CurrentArrowCount = initialArrowCount;
+
+        if (CurrentArrowCount > 0)
+            GameEvents.RaiseArrowPickedUp(CurrentArrowCount);
     }
 
     private void OnEnable()
@@ -45,12 +48,14 @@ public class PlayerShoot : MonoBehaviour
     private void TryShoot()
     {
         if (CurrentArrowCount <= 0) return;
+
         Vector2 direction = GetShootDirection();
         ShootArrow(direction);
-        CurrentArrowCount--;
+
+        CurrentArrowCount = Mathf.Max(0, CurrentArrowCount - 1);
+        GameEvents.RaiseArrowShot();  
     }
 
-    //only mouse...later i will fix
     private Vector2 GetShootDirection()
     {
         Vector2 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());

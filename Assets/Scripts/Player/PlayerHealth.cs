@@ -4,6 +4,7 @@ public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] int maxHealthPoints = 100;
     [SerializeField] float invincibilityDurationSeconds = 0.8f;
+    public int MaxHealthPoints => maxHealthPoints;
 
     public int CurrentHealthPoints { get; private set; }
 
