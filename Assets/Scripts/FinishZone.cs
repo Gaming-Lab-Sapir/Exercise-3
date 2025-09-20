@@ -28,7 +28,7 @@ public class FinishZone : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
 
-        if (pausedByFinish) return;
+        if (!other.CompareTag("Player")) return;
 
         if (level1Text) level1Text.gameObject.SetActive(false);
         if (level2Text) level2Text.gameObject.SetActive(false);
