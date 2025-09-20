@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] float moveSpeed = 2f;
     [SerializeField] float destroyDelay = 0.5f;
     [SerializeField] float arrowHitDelay = 0.05f;
+    [SerializeField] private int enemyDamage = 10;
     [SerializeField] Transform target;
     bool isActive = true;
     Rigidbody2D rb;
@@ -47,7 +48,7 @@ public class Enemy : MonoBehaviour
         if (!isActive) return;
         if (other.gameObject.CompareTag("Player"))
         {
-            GameEvents.RaisePlayerDamaged(10);
+            GameEvents.RaisePlayerDamaged(enemyDamage);
             GetComponent<SpriteRenderer>().color = Color.red;
             StartCoroutine(WaitToDestroy(destroyDelay));
         }

@@ -12,10 +12,10 @@ public class FinishZone : MonoBehaviour
 
     private int currentLevel = 1;
 
-    [SerializeField] private int totalLevels = 3;   
+    [SerializeField] private int totalLevels = 3;//for later, we plan to have 3 levels.
     private int completedLevels = 0;                
     private bool pausedByFinish = false;
-    [SerializeField] private bool resumeOnAnyKey = true;
+
 
     private void Start()
     {
@@ -54,20 +54,6 @@ public class FinishZone : MonoBehaviour
         {
             Time.timeScale = 0f;
             pausedByFinish = true;
-        }
-    }
-
-    private void Update()
-    {
-        if (resumeOnAnyKey && pausedByFinish && Input.anyKeyDown)
-        {
-            Time.timeScale = 1f;
-            pausedByFinish = false;
-
-            if (level1Text) level1Text.gameObject.SetActive(false);
-            if (level2Text) level2Text.gameObject.SetActive(false);
-            if (level3Text) level3Text.gameObject.SetActive(false);
-            if (winnerText) winnerText.gameObject.SetActive(false);
         }
     }
 }
