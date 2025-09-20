@@ -7,13 +7,13 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] private GameObject arrowPrefab;
     [SerializeField] private int initialArrowCount = 0;
     public int CurrentArrowCount { get; private set; }
-
-    private Animator playerAnimator;
+    const float StickDeadzone = 0.2f;
+    //private Animator playerAnimator; for now there is no animation for that
     private PlayerInputActions playerInputActions;
 
     private void Awake()
     {
-        playerAnimator = GetComponent<Animator>();
+        //playerAnimator = GetComponent<Animator>();
         playerInputActions = new PlayerInputActions();
         CurrentArrowCount = initialArrowCount;
 
@@ -58,8 +58,12 @@ public class PlayerShoot : MonoBehaviour
 
     private Vector2 GetShootDirection()
     {
-        Vector2 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-        return (mouseWorldPosition - (Vector2)arrowSpawnPoint.position).normalized;
+        Vector2 stick = Gamepad.current?.rightStick.ReadValue() ?? Vector2.zero;
+        if (stick.sqrMagnitude > StickDeadzone)
+            return stick.normalized;
+
+        Vector2 mouseWorld = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        return (mouseWorld - (Vector2)arrowSpawnPoint.position).normalized;
     }
 
     private void ShootArrow(Vector2 direction)

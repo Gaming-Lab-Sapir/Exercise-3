@@ -7,26 +7,26 @@ public class PlayerMovement : MonoBehaviour
 
     Rigidbody2D rb;
     Vector2 moveInput;
-    PlayerInputActions inputActions;
+    PlayerInputActions playerInputActions;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        inputActions = new();
+        playerInputActions = new();
     }
 
     void OnEnable()
     {
-        inputActions.Enable();
-        inputActions.Player.Move.performed += OnMove;
-        inputActions.Player.Move.canceled += OnMove;   
+        playerInputActions.Enable();
+        playerInputActions.Player.Move.performed += OnMove;
+        playerInputActions.Player.Move.canceled += OnMove;   
     }
 
     void OnDisable()
     {
-        inputActions.Player.Move.performed -= OnMove;
-        inputActions.Player.Move.canceled -= OnMove;
-        inputActions.Disable();
+        playerInputActions.Player.Move.performed -= OnMove;
+        playerInputActions.Player.Move.canceled -= OnMove;
+        playerInputActions.Disable();
     }
 
     void FixedUpdate()

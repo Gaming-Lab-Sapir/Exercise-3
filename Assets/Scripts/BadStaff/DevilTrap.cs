@@ -2,7 +2,7 @@
 
 public class DevilTrap : MonoBehaviour
 {
-    [SerializeField] private int damageAmount = 10;
+    [SerializeField] private int trapDamage = 10;
 
     private bool hasTriggered = false;
 
@@ -12,7 +12,7 @@ public class DevilTrap : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
-            GameEvents.RaisePlayerDamaged(damageAmount);
+            GameEvents.RaisePlayerDamaged(trapDamage);
             hasTriggered = true;
         }
     }
